@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    /* align-content: center; */
+    justify-content: center;
+}
+
+canvas {
+    border: 1px solid rgba(157, 159, 160, 0.747);
+    background:linear-gradient(to bottom,#f5a6e1cc,#ffffff);
+    border-radius: 5px;
+    box-shadow: 0px 2px 7px #868586fd;
+}
+
+#reload-button {
+    font-size: 2.7rem;
+    cursor: pointer;
+    color: #036bcc;
+    margin-left: .2rem;
+}
+
+button#reload-button:hover {
+    background-color: rgb(114, 116, 114);
+}
+
+#user-input {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #555;
+    border-radius: 6px;
+}
+
