@@ -1,0 +1,24 @@
+.nav{
+    height: 90px;
+    width: 100%;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand{
+    margin-left: 1rem;
+}
+
+
+.nav-item{
+    margin-left: 2rem;
+   
+}
+.nav-link{
+    color: aliceblue;
+}
+
+.nav-link:hover{
+    color: chartreuse;
+}

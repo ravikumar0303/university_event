@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Box, Button, Paper, TextField, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Footer from "../Components/Footer";
-import MuiNavbar from "../Components/MuiNavbar";
+
 
 // Function to generate a random 6-digit OTP
 const generateOtp = () => {
