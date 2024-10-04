@@ -36,11 +36,7 @@ function App() {
         {/* <Route path='/' element={<FCarousel/>}/> */}
         < Route path='/signup' element={<SignUpScreen/>}/>
         <Route path='/login' element={<LoginPage/>}></Route>
-<<<<<<< HEAD
-        <Route path='/calendar' element={<Calendar/>}></Route>
-=======
         <Route path='/event' element={<Event/>}></Route>
->>>>>>> 00976ad44193672a1e2e41777fe3bf2811d5ac69
         <Route path='/otp' element={<Otp/>}></Route>
         <Route path='/dashboard' element={<Dashboard2/>}></Route>
         <Route path="/book-event" element={<BookEvent />} />

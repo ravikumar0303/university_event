@@ -1,7 +1,6 @@
 import React from 'react';
 import './nav.css';
 import logo from '../assets/e-gov logo.png';
-import { Link } from 'react-router-dom';
 
 function Navbar(){
 return (
@@ -39,11 +38,7 @@ return (
        </li>
 
        <li class="nav-item">
-<<<<<<< HEAD
-        <Link to="/calendar" class="nav-link" ><b><h4>Event</h4></b></Link>
-=======
         <a class="nav-link" href="/book-event"><b><h4>Event</h4></b></a>
->>>>>>> 00976ad44193672a1e2e41777fe3bf2811d5ac69
       </li>
 
        
