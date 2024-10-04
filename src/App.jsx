@@ -13,6 +13,7 @@ import MoreEvent from './eventlist/eventmore'
 import SignUpScreen from './Screens/User/SignUpScreen';
 import FCarousel from './Components/FCarousel';
 import Event from './Screens/Events/BookEvent';
+import Calendar from './Components/Calendar';
 
 function App() {
   
@@ -20,12 +21,12 @@ function App() {
   return (
     <div >
 
-         <div style={{ minHeight: "100px", color: "green" }}>
+         {/* <div style={{ minHeight: "100px", color: "green" }}>
           <Header />
         </div>   
          <div>
              <Navbar/>
-        </div>  
+        </div>   */}
         
       
 
@@ -35,11 +36,11 @@ function App() {
         {/* <Route path='/' element={<Carousel/>}/> */}
         < Route path='/signup' element={<SignUpScreen/>}/>
         <Route path='/login' element={<LoginPage/>}></Route>
-        <Route path='/event' element={<Event/>}></Route>
+        <Route path='/event' element={<Calendar/>}></Route>
         <Route path='/otp' element={<Otp/>}></Route>
         <Route path='/dashboard' element={<Dashboard2/>}></Route>
       </Routes>
-      <FCarousel/>
+      
       <Footer />
     </div>
   )

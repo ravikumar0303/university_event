@@ -92,7 +92,7 @@ return (
         src={logo}
         width="60"
         height="50" 
-        alt=""
+        alt="E-Governance"
         />
         </a> 
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -118,17 +118,10 @@ return (
        </li>
 
        <li class="nav-item">
-        <a class="nav-link" href="/event"><b><h4>event</h4></b></a>
+        <a class="nav-link" href="/event"><b><h4>Event</h4></b></a>
       </li>
 
-       <li class="nav-item">
-         <a class="log" color='primar' href='/login'> <b><h5>SignIn</h5></b></a>
-         {/* <Link to='/'> <Button color='primary'><b>LogIn</b> </Button> </Link> */}
-       </li>
-       <li class="nav-item">
-         <a class="log" color='primar' href='/signup'> <b><h5>SignUp</h5></b></a>
-         {/* <Link to='/'> <Button color='primary'><b>LogIn</b> </Button> </Link> */}
-       </li>
+       
 
      
     </ul>
@@ -140,6 +133,15 @@ return (
         </Box> */}
   </div>
 
+  
+  <li class="nav-item">
+         <a class="log" color='primar' href='/login'> <b><h5>SignIn</h5></b></a>
+         {/* <Link to='/'> <Button color='primary'><b>LogIn</b> </Button> </Link> */}
+       </li>
+       <li class="nav-item">
+         <a class="log" color='primar' href='/signup'> <b><h5>SignUp</h5></b></a>
+         {/* <Link to='/'> <Button color='primary'><b>LogIn</b> </Button> </Link> */}
+       </li>
   
 </nav>
 

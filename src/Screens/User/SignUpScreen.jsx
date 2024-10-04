@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import {
   Stack,
@@ -15,6 +13,7 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Header from "../../Components/header";
 
 const SignUpScreen = () => {
   const [formData, setFormData] = useState({
@@ -42,7 +41,6 @@ const SignUpScreen = () => {
 
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [showPassword2, setShowPassword2] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -101,7 +99,9 @@ const SignUpScreen = () => {
   };
 
   return (
-    <div style={{ height: '100vh', position: 'relative', top: '0px' }}>
+    <div>
+      <Header/>
+    <div style={{ position: 'relative', marginTop:'2.5rem' }}>
      
       <Container component="main" maxWidth="xs" sx={{ position: "relative", mt: 2, mb: 7 }}>
         <Paper elevation={3} style={{ padding: "8px 16px 10px" }}>
@@ -266,6 +266,7 @@ const SignUpScreen = () => {
         </Paper>
       </Container>
       {/* <Footer /> */}
+    </div>
     </div>
   );
 };

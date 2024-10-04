@@ -95,8 +95,9 @@ const Footer = () => {
                             </i>
                         </FooterLink>
                     </Column>
-                    <p > &copy; 2024 All Rights Reserved</p>
+                    
                 </Row>
+                <p style={{color:'white', textAlign:'center'}}> &copy; 2024 All Rights Reserved</p>
             </FooterContainer>
 
             

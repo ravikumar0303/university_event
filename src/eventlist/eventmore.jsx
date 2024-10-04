@@ -7,6 +7,8 @@ import Logo from '../assets/designationpic/CDAC_logo.png';
 import Centerpic from '../assets/designationpic/Cdac_delhi.jpg';
 import CDAC from '../assets/designationpic/cdac-delhi.png';
 import Carousel from '../Components/carousel';
+import Header from '../Components/header';
+import Navbar from '../Components/Navbar';
 
 function Eventmore() {
   const [showMore, setShowMore] = useState(false);
@@ -17,6 +19,8 @@ function Eventmore() {
 
   return (
     <div>
+      <Header/>
+      <Navbar/>
       <Carousel/>
     <div className="container">
       <div className="row">

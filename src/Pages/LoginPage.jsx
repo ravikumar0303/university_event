@@ -271,6 +271,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import Axios from 'axios'; // Axios for API calls
 import "./LoginPage.css";
+import Header from "../Components/header";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -375,6 +376,8 @@ const LoginPage = () => {
   };
 
   return (
+    <div>
+      <Header/>
     <Container
       component="main"
       maxWidth="xs"
@@ -500,6 +503,7 @@ const LoginPage = () => {
         </Box>
       </Paper>
     </Container>
+    </div>
   );
 };
 
