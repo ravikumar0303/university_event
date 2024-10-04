@@ -3,86 +3,6 @@ import './nav.css';
 import logo from '../assets/e-gov logo.png';
 import { Link } from 'react-router-dom';
 
-// import logo from '../assets/Digital india.png';
-
-// import Fcss from '../css/header.css';
-
-// const Header = () => {
-//   return (
-//     <header className="header">
-//       <div className="container">
-//         <div className="row">
-//           <div className="col-md-12">
-//             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-//               <a className="navbar-brand" href="/">
-//                 Dr. Rammanohar Lohia Avadh University
-//               </a>
-//               <button
-//                 className="navbar-toggler"
-//                 type="button"
-//                 data-toggle="collapse"
-//                 data-target="#mainNav"
-//                 aria-controls="mainNav"
-//                 aria-expanded="false"
-//                 aria-label="Toggle navigation"
-//               >
-//                 <span className="navbar-toggler-icon"></span>
-//               </button>
-//               <div className="collapse navbar-collapse" id="mainNav">
-//                 <ul className="navbar-nav ml-auto">
-//                   <li className="nav-item active">
-//                     <a className="nav-link" href="/">
-//                       The University
-//                     </a>
-//                   </li>
-//                   <li className="nav-item">
-//                     <a className="nav-link" href="/">
-//                       Administration
-//                     </a>
-//                   </li>
-//                   <li className="nav-item">
-//                     <a className="nav-link" href="/">
-//                       Academics
-//                     </a>
-//                   </li>
-//                   <li className="nav-item">
-//                     <a className="nav-link" href="/">
-//                       Campus Life
-//                     </a>
-//                   </li>
-//                   <li className="nav-item">
-//                     <a className="nav-link" href="/">
-//                       Online
-//                     </a>
-//                   </li>
-//                   <li className="nav-item">
-//                     <a className="nav-link" href="/">
-//                       Alumni
-//                     </a>
-//                   </li>
-//                   <li className="nav-item">
-//                     <a className="nav-link" href="/">
-//                       Recruitment
-//                     </a>
-//                   </li>
-//                   <li className="nav-item">
-//                     <a className="nav-link" href="/">
-//                       RTI
-//                     </a>
-//                   </li>
-//                 </ul>
-//               </div>
-//             </nav>
-//           </div>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
-
 function Navbar(){
 return (
 
@@ -119,7 +39,11 @@ return (
        </li>
 
        <li class="nav-item">
+<<<<<<< HEAD
         <Link to="/calendar" class="nav-link" ><b><h4>Event</h4></b></Link>
+=======
+        <a class="nav-link" href="/book-event"><b><h4>Event</h4></b></a>
+>>>>>>> 00976ad44193672a1e2e41777fe3bf2811d5ac69
       </li>
 
        
