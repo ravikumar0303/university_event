@@ -36,7 +36,7 @@ function App() {
         {/* <Route path='/' element={<Carousel/>}/> */}
         < Route path='/signup' element={<SignUpScreen/>}/>
         <Route path='/login' element={<LoginPage/>}></Route>
-        <Route path='/event' element={<Calendar/>}></Route>
+        <Route path='/calendar' element={<Calendar/>}></Route>
         <Route path='/otp' element={<Otp/>}></Route>
         <Route path='/dashboard' element={<Dashboard2/>}></Route>
       </Routes>

@@ -6,6 +6,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './Event-utils';
+import Navbar from './Navbar';
 
 export default function Calendar() {
   const [weekendsVisible, setWeekendsVisible] = useState(true)
@@ -90,6 +91,8 @@ function renderEventContent(eventInfo) {
 
 function Sidebar({ weekendsVisible, handleWeekendsToggle, currentEvents }) {
   return (
+    <div>
+        
     <div className='demo-app-sidebar'>
       <div className='demo-app-sidebar-section'>
         <h2>Instructions</h2>
@@ -117,6 +120,7 @@ function Sidebar({ weekendsVisible, handleWeekendsToggle, currentEvents }) {
           ))}
         </ul>
       </div>
+    </div>
     </div>
   )
 }

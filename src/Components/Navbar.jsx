@@ -1,6 +1,7 @@
 import React from 'react';
 import './nav.css';
 import logo from '../assets/e-gov logo.png';
+import { Link } from 'react-router-dom';
 
 // import logo from '../assets/Digital india.png';
 
@@ -118,7 +119,7 @@ return (
        </li>
 
        <li class="nav-item">
-        <a class="nav-link" href="/event"><b><h4>Event</h4></b></a>
+        <Link to="/calendar" class="nav-link" ><b><h4>Event</h4></b></Link>
       </li>
 
        
