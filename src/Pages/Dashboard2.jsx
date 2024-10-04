@@ -37,6 +37,7 @@ function DemoPageContent({ pathname }) {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
+        height: '100vh',
       }}
     >
       <Typography>Dashboard content for {pathname}</Typography>
