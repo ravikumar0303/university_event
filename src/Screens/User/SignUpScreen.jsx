@@ -48,7 +48,7 @@ const SignUpScreen = () => {
     const { name, value } = event.target;
 
     if (["firstName", "lastName", "city"].includes(name)) {
-      if (/^[A-Za-z]*$/.test(value)) {
+      if (/^[A-Za-z ]*$/.test(value)) {
         setErrors((prevErrors) => ({
           ...prevErrors,
           [name]: "",
@@ -89,7 +89,7 @@ const SignUpScreen = () => {
       console.log("Response:", response.data);
       
       // Handle successful response, e.g., navigate based on role
-      if (formData.role === 'ALUMNI' || formData.role === 'FACULTY') {
+      if (formData.role === 'ADMIN' || formData.role === 'FACULTY') {
         navigate("/dashboard");
       } else {
         navigate('/login');

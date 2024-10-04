@@ -118,14 +118,21 @@ return (
        </li>
 
        <li class="nav-item">
-         <a class="log" color='primar' href='/login'> <b><h4>SignIn</h4></b></a>
+        <a class="nav-link" href="/event"><b><h4>event</h4></b></a>
+      </li>
+
+       <li class="nav-item">
+         <a class="log" color='primar' href='/login'> <b><h5>SignIn</h5></b></a>
          {/* <Link to='/'> <Button color='primary'><b>LogIn</b> </Button> </Link> */}
        </li>
        <li class="nav-item">
-         <a class="log" color='primar' href='/registration'> <b><h4>SignUp</h4></b></a>
+         <a class="log" color='primar' href='/signup'> <b><h5>SignUp</h5></b></a>
          {/* <Link to='/'> <Button color='primary'><b>LogIn</b> </Button> </Link> */}
        </li>
+
+     
     </ul>
+   
 
     
         {/* <Box sx={{display:{xs:'flex',md:'flex'}}}>

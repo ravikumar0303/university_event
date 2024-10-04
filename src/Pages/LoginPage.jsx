@@ -361,7 +361,7 @@ const LoginPage = () => {
         if (userRole === 'ADMIN') {
           navigate('/dashboard'); // Redirect to the admin dashboard
         } else {
-          navigate('/'); // Redirect to user dashboard
+          navigate('/dashboard'); // Redirect to user dashboard
         }
       } catch (error) {
         alert('Login failed. Please check your credentials.');
