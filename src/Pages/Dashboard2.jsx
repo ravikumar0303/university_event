@@ -1,117 +1,105 @@
-import React,{useState} from 'react';
-import PropTypes from 'prop-types';
-import {Box} from '@mui/material';
-import Typography from '@mui/material/Typography';
-import { createTheme } from '@mui/material/styles';
-import DescriptionIcon from '@mui/icons-material/Description';
-import { AppProvider } from '@toolpad/core/AppProvider';
-import { DashboardLayout } from '@toolpad/core/DashboardLayout';
-import PersonIcon from '@mui/icons-material/Person';
-import EventIcon from '@mui/icons-material/Event';
-import EventNoteIcon from '@mui/icons-material/EventNote';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import DashboardIcon from '@mui/icons-material/Dashboard';
+// src/Components/Dashboard.js
+import React, { useState } from 'react';
+import { Box, CssBaseline, AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemIcon, ListItemText, Divider, Typography } from '@mui/material';
+import { Dashboard as DashboardIcon, Person as PersonIcon, Event as EventIcon, EventNote as EventNoteIcon, PeopleAlt as PeopleAltIcon, Menu as MenuIcon, ChevronLeft as ChevronLeftIcon, Brightness4, Brightness7 } from '@mui/icons-material';
+import { Outlet, Link } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const demoTheme = createTheme({
-  cssVariables: {
-    colorSchemeSelector: 'data-toolpad-color-scheme',
-  },
-  colorSchemes: { light: true, dark: true },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 600,
-      lg: 1200,
-      xl: 1536,
+const drawerWidth = 240;
+
+const Dashboard = () => {
+  const [open, setOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setOpen(!open);
+  };
+
+  const handleThemeToggle = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? 'dark' : 'light',
+      primary: {
+        main: '#1976d2',
+      },
     },
-  },
-});
+  });
 
-function DemoPageContent({ pathname }) {
+  const navItems = [
+    { text: 'Dashboard', icon: <DashboardIcon />, path: '/dashboard' },
+    { text: 'Users', icon: <PersonIcon />, path: '/dashboard/user' },
+    { text: 'Create Events', icon: <EventIcon />, path: '/dashboard/create-events' },
+    { text: 'Events List', icon: <EventNoteIcon />, path: '/dashboard/events-list' },
+    { text: 'Participants', icon: <PeopleAltIcon />, path: '/dashboard/participants' },
+  ];
+
   return (
-    <Box
-      sx={{
-        py: 4,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
-        height: '100vh',
-      }}
-    >
-      <Typography>Dashboard content for {pathname}</Typography>
-    </Box>
-  );
-}
+    <ThemeProvider theme={theme}>
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <AppBar position="fixed" style={{ zIndex: '1201' ,background:'linear-gradient(to right bottom,#134B70 60%,#201E43 40%'}}>
+          <Toolbar>
+            <IconButton color="inherit" onClick={handleDrawerToggle}>
+              <MenuIcon />
+               </IconButton>
 
-DemoPageContent.propTypes = {
-  pathname: PropTypes.string.isRequired,
+            <img style={{width:'6rem'}} src="src/assets/CDAC.png" alt="CDAC" />
+            
+            <Typography variant="h6" sx={{ flexGrow: 2 }}>
+              Dashboard
+            </Typography>
+            <IconButton color="inherit" onClick={handleThemeToggle}>
+              {darkMode ? <Brightness7 /> : <Brightness4 />}
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          sx={{
+            width: drawerWidth,
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+              width: drawerWidth,
+              backgroundColor: darkMode ? '#333' : '#fff',
+              color: darkMode ? '#fff' : '#000',
+              boxSizing: 'border-box',
+              transition: 'width 0.3s ease',
+            },
+          }}
+          variant="persistent"
+          anchor="left"
+          open={open}
+        >
+          <Toolbar>
+            <IconButton onClick={handleDrawerToggle} sx={{ color: darkMode ? '#fff' : '#000' }}>
+              <ChevronLeftIcon />
+            </IconButton>
+          </Toolbar>
+          {/* <Divider sx={{ backgroundColor: darkMode ? '#fff' : '#000' }} /> */}
+          <List>
+            {navItems.map((item, index) => (
+             <> 
+             <ListItem button component={Link} to={item.path} key={index}>
+                <ListItemIcon sx={{ color: darkMode ? '#fff' : '#666' }}>{item.icon}</ListItemIcon>
+                {open && <ListItemText primary={item.text} sx={{ color: darkMode ? '#fff' : '#000' }} />}
+                
+              </ListItem>
+              <Divider variant='middle' sx={{ backgroundColor: darkMode ? '#aaa0.1' : '#9999990.4' }} />
+              </>
+            ))}
+            
+          </List>
+          
+        </Drawer>
+        <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3, transition: 'margin-left 0.3s ease', marginLeft: open ? '10px' : '-10rem' }}>
+          <Toolbar />
+          <Outlet />
+        </Box>
+      </Box>
+    </ThemeProvider>
+  );
 };
 
-function Dashboard2(props) {
-
-  const [pathname, setPathname] = useState('/dashboard');
-
-  const router = React.useMemo(() => {
-    return {
-      pathname,
-      searchParams: new URLSearchParams(),
-      navigate: (path) => setPathname(String(path)),
-    };
-  }, [pathname]);
-
-  return (
-    // preview-start
-    <AppProvider
-      navigation={[
-        {
-          segment: 'dashboard',
-          title: 'Dashboard',
-          icon: <DashboardIcon />,
-        },
-        { kind: 'divider' },
-        {
-          segment: 'users',
-          title: 'Users',
-          icon: <PersonIcon />,
-        },
-        { kind: 'divider' },
-        {
-          segment: 'Create-Events',
-          title: 'Create-Events',
-          icon: <EventIcon />,
-        },
-        { kind: 'divider' },
-        {
-          segment: 'Events-list',
-          title: 'Events-list',
-          icon: <EventNoteIcon />,
-        },
-        { kind: 'divider' },
-        {
-          segment: 'participants',
-          title: 'Participants',
-          icon: <PeopleAltIcon />,
-        },
-        
-      ]}
-      branding={{
-        logo:<img src="src/assets/CDAC.png" alt="CDAC" />,
-        
-         title: 'Dashboard'
-      }}
-      
-      router={router}
-      theme={demoTheme}
-    >
-      <DashboardLayout>
-        <DemoPageContent pathname={pathname} />
-      </DashboardLayout>
-    </AppProvider>
-    // preview-end
-  );
-}
-
-
-export default Dashboard2;
+export default Dashboard;

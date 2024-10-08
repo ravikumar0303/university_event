@@ -11,10 +11,9 @@ function Header() {
         alignItems: "center",
         justifyContent: "space-between",
         backgroundColor: "#dafef9",
-        paddingBottom: ".4rem",
+        // paddingBottom: "0rem",
         paddingTop: ".4rem",
-        borderBottom:'1px solid aqua',
-        boxShadow:'0 1px 5px #dafef9'
+        borderBottom:'2px solid #8CF2FE'
       }}
     >
       <img

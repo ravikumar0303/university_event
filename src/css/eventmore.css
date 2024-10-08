@@ -13,13 +13,11 @@
   
   .card {
     margin-bottom: 2px;
-    
   }
   
   .card-body {
     padding: 10px;
-    margin-right: 10px;
-   
+    margin-right: 10px; 
   }
   
   .card-title {

@@ -271,7 +271,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import Axios from 'axios'; // Axios for API calls
 import "./LoginPage.css";
-import Header from "../Components/header";
+// import Header from "../Components/header";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -346,8 +346,22 @@ const LoginPage = () => {
     });
   };
 
+  const login=()=>{
+    localStorage.setItem('login',true)
+    navigate('/');
+  }
+
+  useEffect(()=>{
+    let login=localStorage.getItem('login');
+    if(login){
+      navigate('/')
+    }
+  })
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    
     // Ensure the Captcha is valid
     if (userInput === captchaText) {
       try {
@@ -377,7 +391,6 @@ const LoginPage = () => {
 
   return (
     <div>
-      <Header/>
     <Container
       component="main"
       maxWidth="xs"
@@ -482,6 +495,7 @@ const LoginPage = () => {
 
               <Button
                 type="submit"
+                onClick={login}
                 fullWidth
                 variant="contained"
                 color="primary"

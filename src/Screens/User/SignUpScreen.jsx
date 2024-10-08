@@ -100,7 +100,7 @@ const SignUpScreen = () => {
 
   return (
     <div>
-      <Header/>
+      
     <div style={{ position: 'relative', marginTop:'2.5rem' }}>
      
       <Container component="main" maxWidth="xs" sx={{ position: "relative", mt: 2, mb: 7 }}>
