@@ -34,10 +34,10 @@ b { /* used for event dates/times */
 
 .demo-app-sidebar {
   width: 250px;
-  height: 90%;
+  height: 100%;
   line-height: 1.22;
-  background: #dafef9;
-  border-right: 1.8px solid #4aa7cc;
+  background: #8f9191;
+  border-right: 1px solid #d3e2e8;
 }
 
 .demo-app-sidebar-section {

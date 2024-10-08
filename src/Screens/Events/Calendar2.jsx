@@ -6,7 +6,6 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './Event-utils';
-import { Link } from 'react-router-dom';
 
 export default function Calendar() {
   const [weekendsVisible, setWeekendsVisible] = useState(true)
@@ -59,15 +58,15 @@ export default function Calendar() {
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
           }}
           initialView='dayGridMonth'
-          editable={false}
-          selectable={false}
+          editable={true}
+          selectable={true}
           selectMirror={true}
           dayMaxEvents={true}
           weekends={weekendsVisible}
           initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
-        
+          select={handleDateSelect}
           eventContent={renderEventContent} // custom render function
-
+          eventClick={handleEventClick}
           eventsSet={handleEvents} // called after events are initialized/added/changed/removed
           /* you can update a remote database when these fire:
           eventAdd={function(){}}
@@ -84,7 +83,7 @@ function renderEventContent(eventInfo) {
   return (
     <>
       <b>{eventInfo.timeText}</b>
-     <Link to ='/event-list'><i>{eventInfo.event.title}</i> </Link>
+      <i>{eventInfo.event.title}</i>
     </>
   )
 }
@@ -94,6 +93,14 @@ function Sidebar({ weekendsVisible, handleWeekendsToggle, currentEvents }) {
     <div>
         
     <div className='demo-app-sidebar'>
+      <div className='demo-app-sidebar-section'>
+        <h2>Instructions</h2>
+        <ul>
+          <li>Select dates and you will be prompted to create a new event</li>
+          <li>Drag, drop, and resize events</li>
+          <li>Click an event to delete it</li>
+        </ul>
+      </div>
       <div className='demo-app-sidebar-section'>
         <label>
           <input
