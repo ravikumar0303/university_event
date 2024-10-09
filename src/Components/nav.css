@@ -1,7 +1,21 @@
-.nav{
-    height: 90px;
-    width: 100%;
-    background-color: rgb(170, 28, 226);
-    display: flex;
-    align-items: center;
+.btn{
+    color:#06d3d3;
+    font-weight: 500;
+    font-size: .95rem;
+    border: 1.5px solid aqua;
+    
+
+}
+
+.btn:hover{
+    color:#189cf3;
+    font-weight: 500;
+    font-size: .95rem;
+    border: 1.5px solid #0992ec;
+}
+
+.nav:hover{
+    color:#06d3d3;
+    font-weight: 500;
+    font-size: .95rem;
 }

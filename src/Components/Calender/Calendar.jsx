@@ -7,6 +7,9 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "./Event-utils";
 import { Link } from "react-router-dom";
+import Header from "../header";
+import Navbar from "../Navbar";
+import Footer from "../footer";
 
 export default function Calendar() {
   const [weekendsVisible, setWeekendsVisible] = useState(true);

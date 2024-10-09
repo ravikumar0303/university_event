@@ -13,6 +13,9 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Header from "../../Components/header";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/footer";
 
 
 const SignUpScreen = () => {
@@ -262,7 +265,7 @@ const SignUpScreen = () => {
           </form>
         </Paper>
       </Container>
-      <Footer />
+      <Footer/>
     </div>
     </div>
   );

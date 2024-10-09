@@ -1,7 +1,4 @@
-
-
 // export default FCarousel;
-
 import React, { useState, useEffect } from "react";
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos, Pause, PlayArrow } from "@mui/icons-material";
@@ -105,7 +102,7 @@ const FCarousel = () => {
         backgroundColor: "#A9F4D8", // Qua green color
         p: 1,
         borderRadius: "5px",
-        mt: 4,
+        // mt: 4,
         position: "relative",
         overflow: "hidden", // Ensure grid doesn't overflow
       }}
@@ -120,10 +117,10 @@ const FCarousel = () => {
         container
         spacing={1}
         justifyContent="center"
-        sx={{
-          transition: "transform 0.5s ease-in-out", // Smooth scroll effect
-          transform: `translateX(-${start * (100 / maxDisplay)}%)`, // Dynamically calculate based on position
-        }}
+        // sx={{
+        //   transition: "transform 0.5s ease-in-out", // Smooth scroll effect
+        //   transform: `translateX(-${start * (100 / maxDisplay)}%)`, // Dynamically calculate based on position
+        // }}
       >
         {logos.concat(logos).slice(start, start + maxDisplay).map((logo, index) => (
           <Grid
@@ -144,7 +141,9 @@ const FCarousel = () => {
               target="_blank"
               rel="noopener noreferrer"
               sx={{
-                display: "block",
+                display: "inline-flex",
+                justifyContent:'center',
+                alignItems:'center',
                 borderRadius: "8px",
                 boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
                 transition: "transform 0.3s ease",
@@ -165,7 +164,8 @@ const FCarousel = () => {
                   maxHeight: "100px",
                   maxWidth: "100px",
                   marginBottom: "8px",
-                  objectFit: "contain", // Keep all images same size
+                  objectFit: "contain" // Keep all images same size
+                
                 }}
               />
               <Typography variant="subtitle1" align="center" color="textPrimary">
@@ -182,12 +182,12 @@ const FCarousel = () => {
       </IconButton>
 
       {/* Play/Pause Button */}
-      <IconButton
+      {/* <IconButton
         onClick={togglePlayPause}
         sx={{ position: "absolute", bottom: 10, right: 10, color: "#fff" }}
       >
         {isPlaying ? <Pause /> : <PlayArrow />}
-      </IconButton>
+      </IconButton> */}
     </Box>
   );
 };

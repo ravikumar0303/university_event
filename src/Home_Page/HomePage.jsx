@@ -12,7 +12,7 @@ import Footer from '../Components/footer';
 import Header from '../Components/header';
 import Navbar from '../Components/Navbar';
 
-function Eventmore() {
+function HomePage() {
   const [showMore, setShowMore] = useState(false);
 
   const handleClick = () => {
@@ -134,4 +134,4 @@ function Eventmore() {
   );
 }
 
-export default Eventmore;
+export default HomePage;

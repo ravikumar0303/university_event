@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Button, Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../Components/Navbar';
+import Header from '../../Components/header';
+import Footer from '../../Components/footer';
 
 const BookEvent = () => {
   const [message, setMessage] = useState('');
@@ -33,7 +35,8 @@ const BookEvent = () => {
 
   return (
    <>
-   
+   <Header/>
+   <Navbar/>
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" mt={5}>
       <Typography variant="h4">Book Your Event Ticket</Typography>
 
@@ -49,6 +52,7 @@ const BookEvent = () => {
         </Typography>
       )}
     </Box>
+    <Footer/>
     </>
   );
 };
