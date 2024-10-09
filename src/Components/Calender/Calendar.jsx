@@ -59,14 +59,15 @@ export default function Calendar() {
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
           }}
           initialView='dayGridMonth'
-          editable={false}
-          selectable={false}
+          editable={true}
+          selectable={true}
           selectMirror={true}
           dayMaxEvents={true}
           weekends={weekendsVisible}
           initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
-        
+          select={handleDateSelect}
           eventContent={renderEventContent} // custom render function
+          eventClick={handleEventClick}
 
           eventsSet={handleEvents} // called after events are initialized/added/changed/removed
           /* you can update a remote database when these fire:
