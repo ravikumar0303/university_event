@@ -21,8 +21,6 @@ import Protected from "./Protected_Path/Protected";
 function App() {
   return (
     <div>
-       <Header />
-       <Navbar />
 
       <Routes>
         <Route path="/" element={<Protected Component={MoreEvent} />} />
@@ -36,8 +34,7 @@ function App() {
         <Route path="/event-cal" element={<Protected Component={Calendar} />} />
         <Route path='/event-list' element={<EventList/>}></Route>
       </Routes>
-      <FCarousel />
-      <Footer />
+      
     </div>
   );
 }

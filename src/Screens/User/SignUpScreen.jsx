@@ -72,10 +72,6 @@ const SignUpScreen = () => {
   const handlePasswordVisibilityToggle = () => {
     setShowPassword((prev) => !prev);
   };
-  
-  const handlePasswordVisibilityToggle2 = () => {
-    setShowPassword2((prev) => !prev);
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -100,7 +96,8 @@ const SignUpScreen = () => {
 
   return (
     <div>
-      
+      <Header/>
+      <Navbar/>
     <div style={{ position: 'relative', marginTop:'2.5rem' }}>
      
       <Container component="main" maxWidth="xs" sx={{ position: "relative", mt: 2, mb: 7 }}>
@@ -265,7 +262,7 @@ const SignUpScreen = () => {
           </form>
         </Paper>
       </Container>
-      {/* <Footer /> */}
+      <Footer />
     </div>
     </div>
   );
