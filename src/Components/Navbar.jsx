@@ -13,9 +13,9 @@ function Navbar() {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
         
         <Button component={Link} to="/" color="inherit">HOME</Button>
-        <Button component={Link} to="/signup" color="inherit">ABOUT US</Button>
-        <Button component={Link} to="/dashboard" color="inherit">CONTACT US</Button>
-        <Button component={Link} to="/" color="inherit">FAQ</Button>
+        <Button component={Link} to="/##" color="inherit">ABOUT US</Button>
+        <Button component={Link} to="/admin-dashboard" color="inherit">CONTACT US</Button>
+        <Button component={Link} to="/#" color="inherit">FAQ</Button>
         <Button component={Link} to="/event-cal" color="inherit">EVENT</Button>
         </Typography>
         <Button component={Link} to="/login" color="inherit">Sign In</Button>

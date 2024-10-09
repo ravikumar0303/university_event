@@ -38,7 +38,7 @@ const QrCodePage = () => {
       </Button>
 
       {/* Option to go back to the booking page */}
-      <Button variant="outlined" color="secondary" onClick={() => navigate('/book-event')} style={{ marginTop: '20px' }}>
+      <Button variant="outlined" color="secondary" onClick={() => navigate('/event-cal')} style={{ marginTop: '20px' }}>
         Back to Event Booking
       </Button>
     </Box>

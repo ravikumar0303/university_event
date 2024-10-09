@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../../Components/Navbar';
 
 const BookEvent = () => {
   const [message, setMessage] = useState('');
@@ -19,18 +20,20 @@ const BookEvent = () => {
           userId: userId
         }
       });
-
+       if(confirm('IF You want to book a ticket Then Click "Ok"')){
       // Assuming response contains ticket with QR code in base64 format
       const qrCodeBase64 = response.data.qrCode;
 
       // Redirect to the QR Code page with the QR code as a state
-      navigate('/qr-code', { state: { qrCode: qrCodeBase64 } });
+      navigate('/qr-code', { state: { qrCode: qrCodeBase64 } });}
     } catch (error) {
       setMessage('Failed to book the ticket: ' + error.response.data);
     }
   };
 
   return (
+   <>
+   
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" mt={5}>
       <Typography variant="h4">Book Your Event Ticket</Typography>
 
@@ -46,6 +49,7 @@ const BookEvent = () => {
         </Typography>
       )}
     </Box>
+    </>
   );
 };
 
