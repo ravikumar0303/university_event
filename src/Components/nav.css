@@ -1,21 +1,23 @@
-.btn{
-    color:#06d3d3;
-    font-weight: 500;
-    font-size: .95rem;
-    border: 1.5px solid aqua;
-    
-
+div .btn {
+  color: #06d3d3;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1.8px solid aqua;
 }
 
-.btn:hover{
-    color:#189cf3;
-    font-weight: 500;
-    font-size: .95rem;
-    border: 1.5px solid #0992ec;
+.btn:hover {
+  color: #189cf3;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1.8px solid #189cf3;
+  ;
 }
 
-.nav:hover{
-    color:#06d3d3;
-    font-weight: 500;
-    font-size: .95rem;
+.nav {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav:hover {
+  color: #06d3d3;
 }
