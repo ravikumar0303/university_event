@@ -98,11 +98,10 @@ function App() {
 
       <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/Home" element={<HomePage />} />
       <Route path="/signup" element={<SignUpScreen />} />
        <Route path="/login" element={<SignInScreen />}></Route>
         <Route path="/event" element={<Protected Component={Event} />}></Route>
-        {/* <Route path="/otp" element={<Otp />}></Route> */}
-        {/* <Route path="/admin-dashboard" element={<Protected Component={AdminHOmeScreen} />}/> */}
         <Route path="/book-event" element={<Protected Component={BookEvent} />}/>
         <Route path="/qr-code" element={<Protected Component={QrCodePage} />} />
         <Route path="/event-cal" element={<Protected Component={Calendar} />} />
@@ -122,7 +121,9 @@ function App() {
        {/* User Dashbord and related routes */}
        <Route path="/User-HomeScreen" element={<UserHomeScreen/>}></Route>
        <Route path="/User-HomeScreen/event-cal" element={<Calendar/>}></Route>
-       <Route path="/User-HomeScreen" element={<UserHomeScreen/>}></Route>  
+       <Route path="/User-HomeScreen" element={<UserHomeScreen/>}></Route>
+       
+    
 
       </Routes>
 

@@ -11,7 +11,8 @@ function Navbar() {
         <IconButton edge="start" aria-label="logo" sx={{ mr: 2 }}>
           <img src={CDAC} width="100px" height="50px" alt="" />
         </IconButton>
-        <Typography variant="h6" sx={{ flexGrow: 1 }} >       
+        <Typography variant="h6" sx={{ flexGrow: 1 }} >
+        
 
         {/* <Button component={Link} to="/" color="inherit">HOME</Button>
         <Button component={Link} to="/event" color="inherit">ABOUT US</Button>
@@ -19,7 +20,7 @@ function Navbar() {
         <Button component={Link} to="/add-event" color="inherit">FAQ</Button>
         <Button component={Link} to="/event-cal" color="inherit">EVENT</Button> */}
 
-        <Button component={Link} to="/" color="inherit" className='nav'>HOME</Button>
+        <Button component={Link} to="/Home" color="inherit" className='nav'>HOME</Button>
         <Button component={Link} to="/about" color="inherit" className='nav'>ABOUT US</Button>
         <Button component={Link} to="/contactus" color="inherit" className='nav'>CONTACT US</Button>
         <Button component={Link} to="/faq" color="inherit" className='nav'>FAQ</Button>
