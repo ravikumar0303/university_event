@@ -59,8 +59,8 @@ export default function Calendar() {
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
           }}
           initialView='dayGridMonth'
-          editable={true}
-          selectable={true}
+          editable={false}
+          selectable={false}
           selectMirror={true}
           dayMaxEvents={true}
           weekends={weekendsVisible}
@@ -126,3 +126,4 @@ function SidebarEvent({ event }) {
     </li>
   )
 }
+

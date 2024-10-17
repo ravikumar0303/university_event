@@ -6,8 +6,10 @@ const QrCodePage = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Get the QR code from the state passed via navigation
+  // Get the QR code, event, and user details from the state passed via navigation
   const qrCode = location.state?.qrCode;
+  const event = location.state?.event;
+  const user = location.state?.user;
 
   // Function to download the QR code as a PNG file
   const downloadQrCode = () => {
@@ -20,6 +22,16 @@ const QrCodePage = () => {
   return (
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" mt={5}>
       <Typography variant="h5">Your Event QR Code</Typography>
+
+      {/* Display event and user details */}
+      {event && user && (
+        <Box mt={3} textAlign="center">
+          <Typography variant="h6">Event: {event.name}</Typography>
+          <Typography variant="body1">Venue: {event.venue}</Typography>
+          <Typography variant="body1">Date & Time: {event.eventDate}</Typography>
+          <Typography variant="h6">Booked by: {user.firstName} {user.lastName}</Typography>
+        </Box>
+      )}
 
       {/* Display the QR code image */}
       {qrCode && (

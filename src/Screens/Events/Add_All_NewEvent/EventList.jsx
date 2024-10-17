@@ -1,12 +1,12 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, Button, Container} from '@mui/material';
+import {Typography, Button, Container} from '@mui/material';
 import { Link } from 'react-router-dom';
 
 function EventList() {
 
   return (
     <div>
-    <Container style={{ height:"70%",width:'90%', textAlign:'center'}}> 
+    <Container style= {{ height:"70%",width:'90%', textAlign:'center'}}> 
       <br></br>
           <Typography variant='h4'>Birth Anniversary of Gandhi Ji and Shastri Ji</Typography>
          <br/>
