@@ -444,7 +444,6 @@ const LoginPage = () => {
     if (userInput === captchaText) {
       try {
         // Send the login request to the backend
-<<<<<<< HEAD
         const response = await Axios.post("http://localhost:2001/university_event/user/login", {
           email: formData.email,
           password: formData.password
@@ -463,28 +462,6 @@ const LoginPage = () => {
           navigate('/Admin-HomeScreen');
         } else {
           navigate('/User-HomeScreen');
-=======
-        const response = await Axios.post(
-          "http://localhost:2001/university_event/user/login",
-          {
-            email: formData.email,
-            password: formData.password,
-          }
-        );
-
-        // Handle successful login
-        const userRole = response.data.role; // Assuming the role is returned in the response
-        const loginTime = new Date().getTime();
-
-        // Store login information and timestamp in localStorage
-        localStorage.setItem("login", true);
-        localStorage.setItem("loginTime", loginTime);
-
-        if (userRole == "ADMIN") {
-          navigate("/admin-dashboard");
-        } else {
-          navigate("/UserHomeScreen");
->>>>>>> 3a225f2649738286c7ed6d48be41ce5dd32feb8d
         }
       } catch (error) {
         alert("Login failed. Please check your credentials.");

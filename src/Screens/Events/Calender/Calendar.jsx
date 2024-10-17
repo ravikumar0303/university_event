@@ -7,9 +7,10 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "./Event-utils";
 import { Link } from "react-router-dom";
-import Header from "../header";
-import Navbar from "../Navbar";
-import Footer from "../footer";
+import Header from "../../../Components/header";
+import Navbar from "../../../Components/Navbar";
+import Footer from "../../../Components/footer";
+
 
 export default function Calendar() {
   const [weekendsVisible, setWeekendsVisible] = useState(true);
@@ -51,35 +52,6 @@ export default function Calendar() {
   }
 
   return (
-<<<<<<< HEAD:src/Screens/Events/Calender/Calendar.jsx
-    <div className='demo-app'>
-      <Sidebar
-        weekendsVisible={weekendsVisible}
-        handleWeekendsToggle={handleWeekendsToggle}
-        currentEvents={currentEvents}
-      />
-      <div className='demo-app-main'>
-        <FullCalendar
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          headerToolbar={{
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay'
-          }}
-          initialView='dayGridMonth'
-          editable={false}
-          selectable={false}
-          selectMirror={true}
-          dayMaxEvents={true}
-          weekends={weekendsVisible}
-          initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
-          select={handleDateSelect}
-          eventContent={renderEventContent} // custom render function
-          eventClick={handleEventClick}
-
-          eventsSet={handleEvents} // called after events are initialized/added/changed/removed
-          /* you can update a remote database when these fire:
-=======
     <div>
       <Header />
       <Navbar />
@@ -109,7 +81,6 @@ export default function Calendar() {
             eventClick={handleEventClick}
             eventsSet={handleEvents} // called after events are initialized/added/changed/removed
             /* you can update a remote database when these fire:
->>>>>>> 3a225f2649738286c7ed6d48be41ce5dd32feb8d:src/Components/Calender/Calendar.jsx
           eventAdd={function(){}}
           eventChange={function(){}}
           eventRemove={function(){}}
@@ -172,11 +143,5 @@ function SidebarEvent({ event }) {
       </b>
       <i>{event.title}</i>
     </li>
-<<<<<<< HEAD:src/Screens/Events/Calender/Calendar.jsx
-  )
-}
-
-=======
   );
 }
->>>>>>> 3a225f2649738286c7ed6d48be41ce5dd32feb8d:src/Components/Calender/Calendar.jsx
