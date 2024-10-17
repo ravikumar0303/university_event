@@ -11,7 +11,6 @@ import Header from "../../../Components/header";
 import Navbar from "../../../Components/Navbar";
 import Footer from "../../../Components/footer";
 
-
 export default function Calendar() {
   const [weekendsVisible, setWeekendsVisible] = useState(true);
   const [currentEvents, setCurrentEvents] = useState([]);
@@ -70,8 +69,8 @@ export default function Calendar() {
               right: "dayGridMonth,timeGridWeek,timeGridDay",
             }}
             initialView="dayGridMonth"
-            editable={true}
-            selectable={true}
+            editable={false}
+            selectable={false}
             selectMirror={true}
             dayMaxEvents={true}
             weekends={weekendsVisible}
