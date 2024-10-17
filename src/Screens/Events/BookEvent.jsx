@@ -171,6 +171,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
+=======
+import Navbar from '../../Components/Navbar';
+import Header from '../../Components/header';
+import Footer from '../../Components/footer';
+>>>>>>> 3a225f2649738286c7ed6d48be41ce5dd32feb8d
 
 const BookEvent = () => {
   const [message, setMessage] = useState('');
@@ -230,6 +236,12 @@ const BookEvent = () => {
   };
 
   return (
+<<<<<<< HEAD
+=======
+   <>
+   <Header/>
+   <Navbar/>
+>>>>>>> 3a225f2649738286c7ed6d48be41ce5dd32feb8d
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" mt={5}>
       <Typography variant="h4">Book Your Event Ticket</Typography>
 
@@ -282,6 +294,11 @@ const BookEvent = () => {
         </Typography>
       )}
     </Box>
+<<<<<<< HEAD
+=======
+    <Footer/>
+    </>
+>>>>>>> 3a225f2649738286c7ed6d48be41ce5dd32feb8d
   );
 };
 

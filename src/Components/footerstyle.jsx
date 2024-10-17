@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const Box = styled.div`
     padding: 1% 2.5%;
-    background: #636363;
+    background: #3A4664;
     position: relative;
     // position: fixed;
     // position:absolute;

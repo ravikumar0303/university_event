@@ -13,6 +13,9 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Header from "../../Components/header";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/footer";
 
 
 const SignUpScreen = () => {
@@ -72,10 +75,6 @@ const SignUpScreen = () => {
   const handlePasswordVisibilityToggle = () => {
     setShowPassword((prev) => !prev);
   };
-  
-  const handlePasswordVisibilityToggle2 = () => {
-    setShowPassword2((prev) => !prev);
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -100,7 +99,8 @@ const SignUpScreen = () => {
 
   return (
     <div>
-      
+      <Header/>
+      <Navbar/>
     <div style={{ position: 'relative', marginTop:'2.5rem' }}>
      
       <Container component="main" maxWidth="xs" sx={{ position: "relative", mt: 2, mb: 7 }}>
@@ -265,7 +265,7 @@ const SignUpScreen = () => {
           </form>
         </Paper>
       </Container>
-      {/* <Footer /> */}
+      <Footer/>
     </div>
     </div>
   );

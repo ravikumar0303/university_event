@@ -1,6 +1,9 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Box, Button, Typography } from '@mui/material';
+import Header from '../../Components/header';
+import Navbar from '../../Components/Navbar';
+import Footer from '../../Components/footer';
 
 const QrCodePage = () => {
   const location = useLocation();
@@ -20,6 +23,9 @@ const QrCodePage = () => {
   };
 
   return (
+    <div>
+    <Header/>
+    <Navbar/>
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" mt={5}>
       <Typography variant="h5">Your Event QR Code</Typography>
 
@@ -54,6 +60,8 @@ const QrCodePage = () => {
         Back to Event Booking
       </Button>
     </Box>
+    <Footer/>
+    </div>
   );
 };
 

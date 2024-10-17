@@ -1,7 +1,23 @@
-.nav{
-    height: 90px;
-    width: 100%;
-    background-color: rgb(170, 28, 226);
-    display: flex;
-    align-items: center;
+div .btn {
+  color: #06d3d3;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1.8px solid aqua;
+}
+
+.btn:hover {
+  color: #189cf3;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1.8px solid #189cf3;
+  ;
+}
+
+.nav {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav:hover {
+  color: #06d3d3;
 }
