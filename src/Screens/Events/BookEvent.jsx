@@ -171,9 +171,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+
 import Navbar from '../../Components/Navbar';
 import Header from '../../Components/header';
 import Footer from '../../Components/footer';
+
 
 const BookEvent = () => {
   const [message, setMessage] = useState('');
@@ -290,6 +292,7 @@ const BookEvent = () => {
     </Box>
     <Footer/>
     </>
+
   );
 };
 

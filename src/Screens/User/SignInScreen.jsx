@@ -461,7 +461,7 @@ const LoginPage = () => {
         if (userRole === "ADMIN" || userRole === "EVENT_ORGANIZER") {
           navigate('/Admin-HomeScreen');
         } else {
-          navigate('/User-HomeScreen');
+          navigate('/User-HomeScreen');        
         }
       } catch (error) {
         alert("Login failed. Please check your credentials.");

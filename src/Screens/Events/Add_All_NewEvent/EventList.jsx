@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Container } from "@mui/material";
+import { Typography, Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 import Header from "../../../Components/header";
 import Navbar from "../../../Components/Navbar";
@@ -25,6 +25,7 @@ function EventList() {
         <div style={{ textAlign: "left" }}>
           <h5>Venue</h5>
           <h6>CDAC Acts Delhi</h6>
+
         </div>
 
         <Button
