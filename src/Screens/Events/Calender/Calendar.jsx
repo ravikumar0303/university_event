@@ -7,9 +7,9 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "./Event-utils";
 import { Link } from "react-router-dom";
-import Header from "../header";
-import Navbar from "../Navbar";
-import Footer from "../footer";
+// import Header from "../header";
+// import Navbar from "../Navbar";
+// import Footer from "../footer";
 
 export default function Calendar() {
   const [weekendsVisible, setWeekendsVisible] = useState(true);
@@ -51,7 +51,7 @@ export default function Calendar() {
   }
 
   return (
-<<<<<<< HEAD:src/Screens/Events/Calender/Calendar.jsx
+
     <div className='demo-app'>
       <Sidebar
         weekendsVisible={weekendsVisible}
@@ -79,7 +79,7 @@ export default function Calendar() {
 
           eventsSet={handleEvents} // called after events are initialized/added/changed/removed
           /* you can update a remote database when these fire:
-=======
+
     <div>
       <Header />
       <Navbar />
@@ -109,7 +109,6 @@ export default function Calendar() {
             eventClick={handleEventClick}
             eventsSet={handleEvents} // called after events are initialized/added/changed/removed
             /* you can update a remote database when these fire:
->>>>>>> 3a225f2649738286c7ed6d48be41ce5dd32feb8d:src/Components/Calender/Calendar.jsx
           eventAdd={function(){}}
           eventChange={function(){}}
           eventRemove={function(){}}
@@ -117,8 +116,8 @@ export default function Calendar() {
           />
         </div>
       </div>
-      <Footer />
-    </div>
+     
+
   );
 }
 
@@ -172,11 +171,6 @@ function SidebarEvent({ event }) {
       </b>
       <i>{event.title}</i>
     </li>
-<<<<<<< HEAD:src/Screens/Events/Calender/Calendar.jsx
+
   )
 }
-
-=======
-  );
-}
->>>>>>> 3a225f2649738286c7ed6d48be41ce5dd32feb8d:src/Components/Calender/Calendar.jsx
