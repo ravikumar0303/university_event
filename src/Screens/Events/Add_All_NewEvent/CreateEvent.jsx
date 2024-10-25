@@ -1,6 +1,6 @@
 // src/Components/CreateEvent.js
 import React, { useState } from 'react';
-import { TextField, Button, Container } from '@mui/material';
+import { TextField, Button, Container, Paper } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -25,10 +25,14 @@ const CreateEvent = () => {
   };
 
   return (
-    <Container>
-      <h2>Create Event</h2>
+    
+    <Container maxWidth="md" sx={{display:'flex',justifyContent: "center",
+      alignItems: "center",py:2,px:2}}>
+      <Paper elevation={10} sx={{display:'flex',flexDirection:'column',alignItems:'center',pt:2 ,pb:2.7,px:4}}>
+      <h1>Create Event</h1>
       <form onSubmit={handleSubmit}>
         <TextField
+          size='small'
           label="Event Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -36,6 +40,7 @@ const CreateEvent = () => {
           required
         />
         <TextField
+        size='small'
           label="Venue"
           value={venue}
           onChange={(e) => setVenue(e.target.value)}
@@ -44,6 +49,7 @@ const CreateEvent = () => {
           style={{ marginTop: '1rem' }}
         />
         <TextField
+        size='small'
           label="Available Seats"
           value={availableSeats}
           type="number"
@@ -53,6 +59,7 @@ const CreateEvent = () => {
           style={{ marginTop: '1rem' }}
         />
          <TextField
+         size='small'
           // label="Event Date"
           type="datetime-local"
           value={eventDate}
@@ -61,13 +68,17 @@ const CreateEvent = () => {
           required
           style={{ marginTop: '1rem' }}
         />
-        <Button type="submit" variant="contained" color="primary" style={{ marginTop: '1rem' }}>
+        <Button type="submit" variant="contained" color="primary" style={{ display: 'block',         // Makes it take the full width of its parent div
+    margin:'1.5rem auto 0'}}>
           Create Event
         </Button>
       </form>
+      </Paper>
     </Container>
   );
 };
 
 export default CreateEvent;
+
+
 
