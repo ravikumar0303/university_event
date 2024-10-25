@@ -11,15 +11,15 @@ function Header() {
         alignItems: "center",
         justifyContent: "space-between",
         backgroundColor: "#dafef9",
-        // paddingBottom: "0rem",
-        paddingTop: ".4rem",
-        borderBottom:'2px solid #8CF2FE'
+        paddingBottom: "-4rem",
+        paddingTop: ".2rem",
+        // borderBottom:'2px solid #8CF2FE'
       }}
     >
       <img
         src={logo}
         style={{
-          height: "50px",
+          height: "47px",
           marginLeft: "1.8rem",
         }}
       />
@@ -27,17 +27,17 @@ function Header() {
         <img
           src={GOI}
           style={{
-            height: "50px",
+            height: "47px",
             marginLeft: "12rem",
           }}
         />
 
-        <h5>Center For E-Governance Solutions Group New Delhi</h5>
+        <h5 style={{marginBottom:'2px'}}>Center For E-Governance Solutions Group, New Delhi</h5>
       </div>
       <img
         src={Org}
         style={{
-          height: "50px",
+          height: "47px",
           marginRight: "1.8rem",
         }}
       />
@@ -45,3 +45,4 @@ function Header() {
   );
 }
 export default Header;
+
