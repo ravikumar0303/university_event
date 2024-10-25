@@ -15,6 +15,7 @@ import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/footer';
 
 const drawerWidth = 210;
+const closedDrawerWidth = 60;
 
 const UserHomeScreen = () => {
   const [open, setOpen] = useState(false);
@@ -32,7 +33,7 @@ const UserHomeScreen = () => {
     palette: {
       mode: darkMode ? 'dark' : 'light', // Switch between dark and light modes
       primary: {
-        main: '#1976d2',
+        main: '#444555',
       },
     },
   });
@@ -49,12 +50,12 @@ const UserHomeScreen = () => {
     <Header/>
     <Navbar/>
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex'}}>
+      <Box sx={{ display: 'flex',minHeight:'80vh'}}>
         <CssBaseline />
-        <AppBar position="absolute"   sx={{top:'10rem'}}>
+        <AppBar position="absolute"   sx={{top:'9rem'}}>
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <IconButton color="inherit" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2 }}>
+              <IconButton color="inherit" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2.9 }}>
                 <MenuIcon />
               </IconButton>
               <Typography variant="h6" noWrap>
@@ -73,34 +74,36 @@ const UserHomeScreen = () => {
         {/* Drawer for Navigation */}
         <Drawer
           sx={{
-           height:10,
-            width: drawerWidth,
+           height:100,
+            width: open? drawerWidth:closedDrawerWidth,
             flexShrink: 0,
             '& .MuiDrawer-paper': {
-              width: drawerWidth,
+              width: open? drawerWidth:closedDrawerWidth,
               boxSizing: 'border-box',
               position:'absolute',
-              top:'10.5rem',
+              top:'9.8rem',
               zIndex:10
             },
           }}
-          variant="persistent"
-          anchor="left"
+          variant="permanent"
+          
           open={open}
-          onClose={handleDrawerToggle}
         >
           <Toolbar>
             <IconButton onClick={handleDrawerToggle}>
               <ChevronLeftIcon />
             </IconButton>
           </Toolbar>
-          <Divider />
+          
           <List>
             {navItems.map((item, index) => (
+              <>
               <ListItem button component={Link} to={item.path} key={index} onClick={handleDrawerToggle}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItem>
+              <Divider variant="middle" sx={{backgroundColor:darkMode? '#fff' : '#444'}}/>
+              </>
             ))}
           </List>
         </Drawer>
@@ -108,7 +111,7 @@ const UserHomeScreen = () => {
         {/* Main Content Area */}
         <Box
           component="main"
-          sx={{ flexGrow: 2, p: 3, pl:-10 ,transition: 'margin 0.3s ease', ml: open ? '5rem' : '-4rem' }}
+          sx={{ flexGrow: 2, p: 3, pl:-10 ,transition: 'margin 0.3s ease', ml: open ? '4rem' : '-3rem' }}
         >
           <Toolbar />
           <Outlet /> {/* Placeholder for the nested route content */}
