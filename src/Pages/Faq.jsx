@@ -23,26 +23,30 @@ const Faq = () => {
 
   const faqData = [
     {
-      question: "What is full-stack development?",
+      question: "How can I register for an event?",
       answer:
-        "Full-stack development refers to the development of both front-end and back-end portions of a web application.",
+        "You can register for an event by logging into your student account, going to the Events section, and selecting 'Register' for the desired event.",
     },
     {
-      question: "What is React?",
+      question: "Where can I find details of upcoming events?",
       answer:
-        "React is a JavaScript library used for building user interfaces, especially single-page applications.",
+        "All upcoming university events are listed in the Events section of the university website, including dates, venues, and registration details.",
     },
     {
-      question: "How does Node.js work?",
+      question: "Are university events open to non-students?",
       answer:
-        "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, allowing server-side execution of JavaScript code.",
+        "Most university events are open to students and staff only. However, some events allow for guest registration. Check the event details to confirm.",
     },
     {
-      question: "What is full-stack development?",
+      question: "Can I cancel my event registration?",
       answer:
-        "Full-stack development refers to the development of both front-end and back-end portions of a web application.",
+        "Yes, you can cancel your registration up to 24 hours before the event by navigating to 'My Events' in your student account and selecting 'Cancel Registration'.",
     },
-    // Add more questions and answers here
+    {
+      question: "Do I need to bring an ID for event entry?",
+      answer:
+        "Yes, please bring your student ID or a government-issued ID for entry to university events. Check the specific event instructions for additional details.",
+    },
   ];
 
   return (
@@ -123,3 +127,4 @@ const Faq = () => {
 };
 
 export default Faq;
+
