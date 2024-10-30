@@ -1,19 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Calendar.css";
 import { formatDate } from "@fullcalendar/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import { INITIAL_EVENTS, createEventId } from "./Event-utils";
 import { Link } from "react-router-dom";
 import Header from "../../../Components/header";
 import Navbar from "../../../Components/Navbar";
-import Footer from "../../../Components/footer";
+import Footer from "../../../Components/Footer";
+
+const LOCAL_STORAGE_KEY = "calendarEvents";
 
 export default function Calendar() {
   const [weekendsVisible, setWeekendsVisible] = useState(true);
-  const [currentEvents, setCurrentEvents] = useState([]);
+  const [currentEvents, setCurrentEvents] = useState(() => {
+    // Load events from localStorage on page load
+    const savedEvents = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return savedEvents ? JSON.parse(savedEvents) : [];
+  });
+
+  useEffect(() => {
+    // Save events to localStorage whenever they are changed
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(currentEvents));
+  }, [currentEvents]);
 
   function handleWeekendsToggle() {
     setWeekendsVisible(!weekendsVisible);
@@ -26,13 +36,15 @@ export default function Calendar() {
     calendarApi.unselect(); // clear date selection
 
     if (title) {
-      calendarApi.addEvent({
+      const newEvent = {
         id: createEventId(),
         title,
         start: selectInfo.startStr,
         end: selectInfo.endStr,
         allDay: selectInfo.allDay,
-      });
+      };
+      calendarApi.addEvent(newEvent);
+      setCurrentEvents([...currentEvents, newEvent]);
     }
   }
 
@@ -43,6 +55,9 @@ export default function Calendar() {
       )
     ) {
       clickInfo.event.remove();
+      setCurrentEvents(
+        currentEvents.filter((event) => event.id !== clickInfo.event.id)
+      );
     }
   }
 
@@ -51,33 +66,6 @@ export default function Calendar() {
   }
 
   return (
-    <div className="demo-app">
-      <Sidebar
-        weekendsVisible={weekendsVisible}
-        handleWeekendsToggle={handleWeekendsToggle}
-        currentEvents={currentEvents}
-      />
-      <div className="demo-app-main">
-        <FullCalendar
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          headerToolbar={{
-            left: "prev,next today",
-            center: "title",
-            right: "dayGridMonth,timeGridWeek,timeGridDay",
-          }}
-          initialView="dayGridMonth"
-          editable={false}
-          selectable={false}
-          selectMirror={true}
-          dayMaxEvents={true}
-          weekends={weekendsVisible}
-          initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
-          select={handleDateSelect}
-          eventContent={renderEventContent} // custom render function
-          eventClick={handleEventClick}
-          eventsSet={handleEvents} // called after events are initialized/added/changed/removed
-          /* you can update a remote database when these fire:
-
     <div>
       <Header />
       <Navbar />
@@ -96,22 +84,18 @@ export default function Calendar() {
               right: "dayGridMonth,timeGridWeek,timeGridDay",
             }}
             initialView="dayGridMonth"
-            editable={false}
-            selectable={false}
+            editable={true}
+            selectable={true}
             selectMirror={true}
             dayMaxEvents={true}
             weekends={weekendsVisible}
-            initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
+            initialEvents={currentEvents} // Load from localStorage
             select={handleDateSelect}
             eventContent={renderEventContent} // custom render function
             eventClick={handleEventClick}
             eventsSet={handleEvents} // called after events are initialized/added/changed/removed
-            /* you can update a remote database when these fire:
-          eventAdd={function(){}}
-          eventChange={function(){}}
-          eventRemove={function(){}}
-          */
-        />
+          />
+        </div>
       </div>
     </div>
   );
@@ -121,9 +105,9 @@ function renderEventContent(eventInfo) {
   return (
     <>
       <b>{eventInfo.timeText}</b>
-      <Link to="/event-list">
-        <i>{eventInfo.event.title}</i>{" "}
-      </Link>
+      
+        <i ><Link to="/event-list" className="title">{eventInfo.event.title}</Link></i>
+      
     </>
   );
 }
@@ -169,3 +153,8 @@ function SidebarEvent({ event }) {
     </li>
   );
 }
+
+function createEventId() {
+  return String(Math.floor(Math.random() * 10000));
+}
+
