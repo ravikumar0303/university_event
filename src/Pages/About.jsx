@@ -3,7 +3,7 @@ import Header from "../Components/header";
 import Navbar from "../Components/Navbar";
 import AboutUs from "../assets/AboutUs.jpg";
 import { Box, Typography } from "@mui/material";
-import Footer from "../Components/footer";
+import Footer from "../Components/Footer";
 
 function About() {
   return (
@@ -11,29 +11,15 @@ function About() {
       <Header />
       <Navbar />
       <Box
-        sx={{ width: "auto", display: "flex", justifyContent: "space-evenly" }}
+        sx={{ width: "80vw", display: "flex",flexDirection:'column',alignItems:'center',margin:'1rem auto 1rem' }}
       >
         <img
           src={AboutUs}
           alt="AboutUs"
-          style={{ height: "17rem", flexBasis: "32%", marginTop: "5rem" }}
+          style={{ height: "11rem",width:'20rem'}}
         />
-        <Typography
-          variant="h4"
-          align="center"
-          
-          sx={{
-            fontFamily: "New Rocker",
-            fontWeight: "400",
-            fontStyle: "normal",
-            flexBasis: "65%",
-            mt: 5,
-          }}
-        >
-          About Us
-          <br />
-          <Typography sx={{ mt: 2, mb: 9, textAlign: "justify" }}>
-            <h4>Welcome to CDAC Delhi Events!</h4>
+          <Typography sx={{ mb: 9, textAlign: "justify" }}>
+            <h4 >Welcome to CDAC Delhi Events!</h4>
             <p>At CDAC, we believe that university life is a vibrant mix of
             academic excellence, cultural diversity, and social engagement. Our
             University Events Platform is your one-stop destination to explore
@@ -41,7 +27,8 @@ function About() {
             intellectual discussions and academic workshops to cultural
             celebrations and exciting social gatherings, we’ve got something for
             everyone. </p>
-            <h5>What We Offer </h5>
+            <br />
+            <h5>What We Offer :-</h5>
             <p>Our platform is designed to keep you
             connected with everything happening at CDAC. Whether
             you’re interested in expanding your knowledge, meeting new people,
@@ -58,6 +45,7 @@ function About() {
             organization activities that help build friendships and create
             lasting memories. </p></li>
             </ul>
+            <br />
             <h5> Why Choose Us? </h5>
             <ul>
             <li>
@@ -80,7 +68,8 @@ function About() {
             updates about upcoming activities.</p>
             </li>
             </ul>
-            <h5>Our Mission</h5>
+            <br />
+            <h5>Our Mission :-</h5>
             <p>We are dedicated to fostering a vibrant and inclusive campus culture that supports
             academic growth, celebrates cultural diversity, and enhances social
             interaction. Through our events, we aim to: </p>
@@ -95,14 +84,14 @@ function About() {
             <p><strong>Build Social Connections: </strong>Create spaces where students, faculty, and staff
             can connect, collaborate, and enjoy university life together. </p></li>
             </ul>
-            <h5>Join the Experience</h5> We invite you to be part of this dynamic university
+            <br />
+            <h5>Join the Experience :-</h5> We invite you to be part of this dynamic university
             community. Whether you’re looking to gain knowledge, celebrate
             diversity, or meet new friends, [University Name] Events has
             something for you. Explore our academic, cultural, and social
             events, and make the most of your university experience. Let’s
             learn, celebrate, and connect together!
           </Typography>
-        </Typography>
       </Box>
       <Footer />
     </div>
@@ -110,3 +99,4 @@ function About() {
 }
 
 export default About;
+
