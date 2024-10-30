@@ -22,7 +22,21 @@ li {
 }
 
 b { /* used for event dates/times */
-  margin-right: 3px;
+  margin-right: 5px;
+  color: white;
+}
+
+i .title{
+  color: #ffffff;
+}
+
+.fc-daygrid-event-harness {
+  background-color:#be38f3 ;
+  border-radius: 2px;
+}
+
+.fc-h-event .fc-event-main{
+  background-color:#be38f3 ;
 }
 
 .demo-app {
@@ -36,17 +50,24 @@ b { /* used for event dates/times */
   width: 250px;
   height: 90%;
   line-height: 1.22;
-  background: #dafef9;
+  background: #83e7da;
   border-right: 1.8px solid #4aa7cc;
+  overflow: hidden;
 }
 
 .demo-app-sidebar-section {
   padding: 1.7rem;
 }
 
+.demo-app-sidebar-section h2{
+  font-size: 1.7rem;
+}
+
 .demo-app-main {
   flex-grow: 1;
-  padding: 3em;
+  padding: 3rem;
+  font-size: 1rem;
+  font-weight: 550;
 }
 
 .fc { /* the calendar root */
